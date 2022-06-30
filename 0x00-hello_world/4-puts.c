@@ -1,5 +1,8 @@
 #include <stdio.h>
-/*Main function will be printing the text without using the printf*/
+/**
+ * main - Entry point 
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
