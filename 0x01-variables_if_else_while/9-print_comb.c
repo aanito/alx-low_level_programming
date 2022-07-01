@@ -1,9 +1,9 @@
 #include <stdio.h>
+
 /*
- * main - prntcombiantionof two single digits anywya
+ * main - Print combiantion of two single digits anywya
  *
  * Return: Always 0 (Success)
- *
  */
 int main(void)
 {
