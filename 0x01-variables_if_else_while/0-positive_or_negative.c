@@ -9,8 +9,8 @@
   */
 
  /**
-  * betty style doc for function main goes there
-  */
+  * main - > assign variables for different output
+  * /
 int main(void)
 {
 	int n;

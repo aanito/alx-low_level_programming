@@ -12,7 +12,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 	{
-		printf("Last digit of putchar(n) is");
+		printf("Last digit of %d is ", n);
 		if (n % 10 > 5)
 		{
 			printf("and is greater than 5");
