@@ -1,36 +1,22 @@
 #include "main.h"
 /**
- * times_table - prints the times table from 0 - 9.
-(*
- * Return: Nothing.
+ * jack_bauer - prints time table in this format: HH:MM
+ * Return: the sum of two numbers.
  */
-void times_table(void)
+void jack_bauer(void)
 {
-	int i, j, res;
+	int h, m;
 
-	for (i = 0; i <= 9; i++)
+	for (h = 0; h < 24; h++)
 	{
-		for (j = 0; j <= 9; j++)
+		for (m = 0; m < 60; m++)
 		{
-			res = (i * j);
-			if (j != 0)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
-			if (res >= 10)
-			{
-				_putchar((res / 10) + '0');
-				_putchar((res % 10) + '0');
-			}
-			else if (res < 10 && j != 0)
-			{
-				_putchar(' ');
-				_putchar((res % 10) + '0');
-			}
-			else
-				_putchar((res % 10) + '0');
+			_putchar((h / 10) + '0');
+			_putchar((h % 10) + '0');
+			_putchar(':');
+			_putchar((m / 10) + '0');
+			_putchar((m % 10) + '0');
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
