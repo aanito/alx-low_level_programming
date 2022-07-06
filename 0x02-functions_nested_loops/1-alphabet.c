@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * print_small - priint small letters
+ * print_alphabet - print small letters
  *
  * Retrun: 0 (Success)
  */
 
-void print_small(void)
+void print_alphabet(void)
 {
 int a;
 for (a = 'a'; a <= 'z'; a++)
