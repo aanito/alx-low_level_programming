@@ -9,11 +9,15 @@
 char *_strdup(char *str)
 {
     char *str;
-    char *nstr;
+    char *str2;
+    int i, j, n;
 
-    *nstr = strcpy(str, nstr);
-    nstr = char *malloc(unsigned int size, *nstr);
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
+        str2[j] = str[i];
+    str2 = char *malloc(unsigned int size, *str2);
     if (size == 0)
         return (NULL);
-    return (*nstr);
+    return (0);
+
 }
