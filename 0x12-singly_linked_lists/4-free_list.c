@@ -2,16 +2,22 @@
 #include "lists.h"
 
 /**
- * free_list - Free all malloced spaced of a list
- * @head: Pointer to the start of the list
- */
+  * free_list - Frees a linked list.
+  * @head: The pointer to the first node of linked list
+  *
+  * Return: Nothing
+  */
 void free_list(list_t *head)
 {
-	if (head != NULL)
+	list_t *temp;
+
+	while (head)
 	{
-		if (head->next != NULL)
-			free_list(head->next);
-		free(head->str);
-		free(head);
+		temp = head;
+		head = head->next;
+		free(temp->str);
+		free(temp);
 	}
+
+	free(head);
 }
