@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * print_listint - Prints int list-
  * @h: pointer to main list
