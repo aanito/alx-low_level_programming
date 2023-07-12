@@ -1,38 +1,42 @@
 #include "search_algos.h"
+
 /**
- * interpolation_search -  a function that searches for a value
- * in a sorted array of integers using the Interpolation search algorithm
- * assume that array will be sorted in ascending order
- *
- * @array:  is a pointer to the first element of the array to search in
- *
- * @size: is the number of elements in array
- *
- * @value: is the value to search for
- *
- * Return: the first index where value is located
- * If value is not present in array or if array is NULL,
- * your function must return -1
- */
+  * interpolation_search - Searches for a value in a sorted array
+  *                        of integers using interpolation search.
+  * @array: A pointer to the first element of the array to search.
+  * @size: The number of elements in the array.
+  * @value: The value to search for.
+  *
+  * Return: If the value is not present or the array is NULL, -1.
+  *         Otherwise, the first index where the value is located.
+  *
+  * Description: Prints a value every time it is compared in the array..
+  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t pos, high = size - 1, low = 0, count = size;
+	size_t i, l, r;
 
-	if (array == NULL || size == 0)
+	if (array == NULL)
 		return (-1);
-	while (count--)
+
+	for (l = 0, r = size - 1; r >= l;)
 	{
-		pos = low + (((double)(high - low) /
-					(array[high] - array[low])) * (value - array[low]));
-		if (pos > high)
+		i = l + (((double)(r - l) / (array[r] - array[l])) * (value - array[l]));
+		if (i < size)
+			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+		else
 		{
-			printf("Value checked array[%lu] is out of range\n", pos);
+			printf("Value checked array[%ld] is out of range\n", i);
 			break;
 		}
-		printf("Value checked array[%lu] = [%u]\n", pos, array[pos]);
-		if (pos < size && array[pos] == value)
-			return (pos);
-		low = pos + 1;
+
+		if (array[i] == value)
+			return (i);
+		if (array[i] > value)
+			r = i - 1;
+		else
+			l = i + 1;
 	}
+
 	return (-1);
 }
